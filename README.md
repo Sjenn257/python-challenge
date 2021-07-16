@@ -34,6 +34,6 @@ For this challenge, I analyzed a list of votes to find the total votes and perce
     Li: 14.0% (492940)
     
     O'Tooley: 3.0% (105630)
-  -------------------------
-  Winner: Kahn
-  -------------------------
+    -------------------------
+    Winner: Kahn
+    -------------------------
