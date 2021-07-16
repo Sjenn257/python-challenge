@@ -2,11 +2,11 @@
 
 In this homework assignment, you will find two completed Python Challenges, PyBank and PyPoll.
 
-#PyBank
+PyBank
 
 For this challenge, I analyzed financial records to find the average change from month to month as well as the greatest decrease in profits and greatest increase in profits for the time period. Below are the results:
 
-    #Financial Analysis
+    Financial Analysis
     ----------------------------
     Total Months: 86
     
@@ -19,11 +19,11 @@ For this challenge, I analyzed financial records to find the average change from
     Greatest Decrease in Profits: Sep-2013 ($-1196225.0)
 
 
-#PyPoll
+PyPoll
 
 For this challenge, I analyzed a list of votes to find the total votes and percentages of each candidate and found the winner. Below are the results:
 
-    #Election Results
+    Election Results
     -------------------------
     Total Votes: 3521001
     -------------------------
