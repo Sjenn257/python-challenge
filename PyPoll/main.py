@@ -26,7 +26,7 @@ with open(csv_path, newline='',encoding='UTF-8') as csvfile:
     correy_total=0
     li_total=0
     otooley_total=0
-    winner=''
+    winner=""
 
 
     for row in csvreader:
@@ -48,6 +48,22 @@ correy_percent=round(float(correy_total)/float(row_counter)*100,2)
 li_percent=round(float(li_total)/float(row_counter)*100,2)
 otooley_percent=round(float(otooley_total)/float(row_counter)*100,2)
 
+if khan_total>correy_total:
+    if khan_total>li_total:
+        if khan_total>otooley_total:
+            winner="Kahn"
+if correy_total>khan_total:
+    if correy_total>li_total:
+        if correy_total>otooley_total:
+            winner="Correy"
+if li_total>khan_total:
+    if li_total>correy_total:
+        if li_total>otooley_total:
+            winner="Li"
+if otooley_total>khan_total:
+    if otooley_total>li_total:
+        if otooley_total>correy_total:
+            winner="O'Tooley"
 
 print("Election Results")
 print("-------------------------")
@@ -58,10 +74,11 @@ print(f"Correy: {correy_percent}% ({correy_total})")
 print(f"Li: {li_percent}% ({li_total})")
 print(f"O'Tooley: {otooley_percent}% ({otooley_total})")
 print("-------------------------")
-print("Winner: ")
+print(f"Winner: {winner}")
 print("-------------------------")
 
 
+    
 #Election Results
 # -------------------------
 # Total Votes: 3521001
