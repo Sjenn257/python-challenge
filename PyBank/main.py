@@ -12,7 +12,6 @@ with open(csv_path, newline='',encoding='UTF-8') as csvfile:
     net_profit_total=0
     row_counter=0
     change_diff=0
-    prev_date=''
     prev_profit=0
     cumul_change=0
     great_inc_date=''
@@ -21,41 +20,44 @@ with open(csv_path, newline='',encoding='UTF-8') as csvfile:
     great_dec_profit=0
    
     for row in csvreader:
+
+        # start to sum each profit to get total at the end
         net_profit_total+=round(float(row[1]),2)
+
+        # keeping track of which row and to get total count
         row_counter+=1
 
+        # calculating the profit change from previous date except for the first row
         if row_counter == 1:
             change_diff=float('0')
         else:
             change_diff=float(row[1])-prev_profit
+
+        # start to sum each change in profit in order to get an average change in the end which will be (total of changes/count in the end)
+        cumul_change+=change_diff
         
-        if prev_profit>float(row[1]):
-            great_inc_date=prev_date
-            great_inc_profit=prev_profit
-        else:
+        # getting the greatest increase data and putting it in placeholder until a new greater increase is found
+        if float(row[1])>great_inc_profit:
             great_inc_date=row[0]
             great_inc_profit=float(row[1])
+        
+        # getting the greatest decrease data and putting it in a placeholder until a new greater decrease is found
 
         #check difference between positive and negative floats
         #may need to separate them
-        if prev_profit<float(row[1]):
-            great_dec_date=prev_date
-            great_dec_profit=prev_profit
-        else:
+        if float(row[1])<great_dec_profit:
             great_dec_date=row[0]
             great_dec_profit=float(row[1])
+                
+        # put in placeholder to use in next loop for next row calculation
+        prev_profit=float(row[1])
         
-        cumul_change+=change_diff
-
-        #set up for next row calc
-        prev_profit_change=float(row[1])
-        prev_date=row[0]
-
+        # print rows for testing
         print(row[0],float(row[1]),row_counter, change_diff, prev_profit)
 
+    # assign variable to average change calculation with whatever the cumul_change and row counter ended up as
     average_change=round(cumul_change/float(row_counter),2)
-    #works but need to figure out how to skip first data row for change or make it zero
-
+    
     print("Financial Analysis")
     print("-" * 28)
     print(f"Total Months: {row_counter}")
