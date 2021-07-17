@@ -61,7 +61,7 @@ with open(csv_path, newline='',encoding='UTF-8') as csvfile:
     # print results
 
 # Specify the file to write to
-output_path = os.path.join("PyBank","analysis", "analysis.txt")
+output_path = os.path.join("PyBank","analysis.txt")
 
 with open(output_path, 'w', newline='') as csvfile:
 

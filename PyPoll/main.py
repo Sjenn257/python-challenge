@@ -60,7 +60,7 @@ if otooley_total>khan_total:
 # print results
 
 # Specify the file to write to
-output_path = os.path.join("PyPoll","analysis","results.txt")
+output_path = os.path.join("PyPoll","results.txt")
 
 with open(output_path, 'w', newline='') as csvfile:
 
