@@ -57,7 +57,27 @@ with open(csv_path, newline='',encoding='UTF-8') as csvfile:
 
     # assign variable to average change calculation with whatever the cumul_change and row counter ended up as
     average_change=round(cumul_change/float(row_counter),2)
-    
+
+    # print results
+
+# Specify the file to write to
+output_path = os.path.join("PyBank","analysis", "analysis.txt")
+
+with open(output_path, 'w', newline='') as csvfile:
+
+    # Initialize csv.writer
+    csvwriter = csv.writer(csvfile, delimiter=',')
+
+    # Write the rows
+    csvwriter.writerow(["Financial Analysis"])
+    csvwriter.writerow(["-" * 28])
+    csvwriter.writerow([f"Total Months: {row_counter}"])
+    csvwriter.writerow([f"Total: ${net_profit_total}"])
+    csvwriter.writerow([f"Average Change: ${average_change}"])
+    csvwriter.writerow([f"Greatest Increase in Profits: {great_inc_date} (${great_inc_profit})"])
+    csvwriter.writerow([f"Greatest Decrease in Profits: {great_dec_date} (${great_dec_profit})"])
+
+    print(" ",end = "\r\n")
     print("Financial Analysis")
     print("-" * 28)
     print(f"Total Months: {row_counter}")
@@ -65,3 +85,7 @@ with open(csv_path, newline='',encoding='UTF-8') as csvfile:
     print(f"Average Change: ${average_change}")
     print(f"Greatest Increase in Profits: {great_inc_date} (${great_inc_profit})")
     print(f"Greatest Decrease in Profits: {great_dec_date} (${great_dec_profit})")
+    print(" ",end = "\r\n")
+    print("Results were saved in analysis.txt", end = "\r\n")
+    print(" ",end = "\r\n")
+
