@@ -86,6 +86,6 @@ with open(output_path, 'w', newline='') as csvfile:
     print(f"Greatest Increase in Profits: {great_inc_date} (${great_inc_profit})")
     print(f"Greatest Decrease in Profits: {great_dec_date} (${great_dec_profit})")
     print(" ",end = "\r\n")
-    print("Results were saved in analysis.txt", end = "\r\n")
+    print("Results were saved in PyBank/Resources/analysis.txt", end = "\r\n")
     print(" ",end = "\r\n")
 
