@@ -52,13 +52,10 @@ with open(csv_path, newline='',encoding='UTF-8') as csvfile:
         # put in placeholder to use in next loop for next row calculation
         prev_profit=float(row[1])
         
-        # print rows for testing
-        print(row[0],float(row[1]),row_counter, change_diff, prev_profit)
 
     # assign variable to average change calculation with whatever the cumul_change and row counter ended up as
     average_change=round(cumul_change/float(row_counter),2)
 
-    # print results
 
 # Specify the file to write to
 output_path = os.path.join("PyBank","analysis.txt")
@@ -86,6 +83,6 @@ with open(output_path, 'w', newline='') as csvfile:
     print(f"Greatest Increase in Profits: {great_inc_date} (${great_inc_profit})")
     print(f"Greatest Decrease in Profits: {great_dec_date} (${great_dec_profit})")
     print(" ",end = "\r\n")
-    print("Results were saved in PyBank/Resources/analysis.txt", end = "\r\n")
+    print("Results were saved in PyBank/analysis.txt", end = "\r\n")
     print(" ",end = "\r\n")
 
